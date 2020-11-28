@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Loaner</string>
+
+    <string name="wrong_login_or_password">Wrong login or password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="fill_all_fields">Fill all the fields</string>
+</resources>
