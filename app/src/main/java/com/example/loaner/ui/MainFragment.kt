@@ -29,12 +29,16 @@ class MainFragment: Fragment(R.layout.fragment_main) {
             LoginFragment.MODE_REGISTRATION
         }
 
-        (activity as MainActivity).openFragment(
-            LoginFragment().apply {
+        activity?.let {
+            val fragment = LoginFragment().apply {
                 arguments = Bundle().apply {
                     putString(LoginFragment.MODE_BUNDLE_NAME, bundleValue)
                 }
             }
-        )
+            it.supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 }

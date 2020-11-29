@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.loaner.App
 import com.example.loaner.R
-import com.example.loaner.api.ResultData
+import com.example.loaner.repository.data.ResultData
 import com.example.loaner.ui.main.ProfileFragment
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
@@ -32,12 +32,8 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
     lateinit var passwordView: EditText
     lateinit var msgView: TextView
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        (activity?.applicationContext as App).appComponent.inject(this)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        (activity?.applicationContext as App).appComponent.inject(this)
         super.onViewCreated(view, savedInstanceState)
 
         val isRegistrationMode = arguments?.getString(MODE_BUNDLE_NAME) == MODE_REGISTRATION
@@ -72,14 +68,12 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
         }
         else {
             loginViewModel.loginResponse.observe(viewLifecycleOwner, {
-                when (it) {
-                    is ResultData.Success -> {
-                        Log.d("TAG", "onViewCreated: $it")
-                        openFragment(ProfileFragment())
-                    }
-                    is ResultData.Error -> {
-                        Toast.makeText(context, "Login failed", Toast.LENGTH_SHORT).show()
-                    }
+                if (it) {
+                    Log.d("TAG", "onViewCreatedHere: $it")
+                    openFragment(ProfileFragment())
+                }
+                else {
+                    Toast.makeText(context, "Login failed", Toast.LENGTH_SHORT).show()
                 }
             })
             authButton.setOnClickListener {
@@ -94,6 +88,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
         activity?.let{
             it.supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
                 .commit()
         }
     }

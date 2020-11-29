@@ -5,4 +5,12 @@
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Sign up</string>
     <string name="fill_all_fields">Fill all the fields</string>
+    <string name="get_new_loan">Get new loan</string>
+    <string name="amount">Amount</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="percent">Percent</string>
+    <string name="period">Period</string>
+    <string name="phone_number">Phone number</string>
+    <string name="apply">Apply</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.loaner.api
+package com.example.loaner.repository.data
 
 sealed class ResultData <out R>{
     data class Success<out T>(
