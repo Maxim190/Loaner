@@ -19,7 +19,6 @@ interface LoanService {
     @GET()
     fun getLoans()
 
-    //@Headers("Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJobyIsImV4cCI6MTYwOTI1MTU0MX0.tdGSM-8ar1g5cX4cURCiyPxCTLvVB98IZwc7cCKi1OKFk0RPHY1DG8jx-t-SPNrYxbcKUTt1_OLMxE2jrewAHA")
     @GET("/loans/conditions")
     fun getConditions(): Call<Conditions>
 }

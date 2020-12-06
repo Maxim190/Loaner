@@ -7,22 +7,17 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 class AuthorizationInterceptor @Inject constructor(): Interceptor {
-
+    val t = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJobyIsImV4cCI6MTYwOTI1MTU0MX0.tdGSM-8ar1g5cX4cURCiyPxCTLvVB98IZwc7cCKi1OKFk0RPHY1DG8jx-t-SPNrYxbcKUTt1_OLMxE2jrewAHA"
     companion object {
-        var authToken: String? = ""
+        var authToken: String? = null
     }
 
     override fun intercept(chain: Interceptor.Chain): Response {
-        val request = chain.request()
-        Log.d("TAG", "intercept: $authToken")
+        var request = chain.request()
         authToken?.let {
-            request.newBuilder()
-                .header("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJobyIsImV4cCI6MTYwOTI1MTU0MX0.tdGSM-8ar1g5cX4cURCiyPxCTLvVB98IZwc7cCKi1OKFk0RPHY1DG8jx-t-SPNrYxbcKUTt1_OLMxE2jrewAHA")
+            request = request.newBuilder()
+                .header("Authorization", it)
                 .build()
-        }
-
-        request.headers().names().forEach {
-            Log.d("TAG", "Header ${it} ${request.headers().get(it)}")
         }
         return chain.proceed(request)
     }

@@ -4,7 +4,7 @@ data class LoanResponse(
     val name: String,
     val lastName: String,
     val amount: Int,
-    val percent: Int,
+    val percent: Double,
     val period: Int,
     val phoneNumber: String,
     val date: String,

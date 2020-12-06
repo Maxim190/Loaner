@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -30,15 +31,17 @@ class NewLoanFragment: Fragment(R.layout.fragment_new_loan) {
 
         val name = view.findViewById<EditText>(R.id.first_name_view)
         val lastName = view.findViewById<EditText>(R.id.last_name_view)
-        val amount = view.findViewById<EditText>(R.id.amount_view)
-        val percent = view.findViewById<EditText>(R.id.percent_view)
-        val period = view.findViewById<EditText>(R.id.period_view)
+        val amount = view.findViewById<TextView>(R.id.amount_view)
+        val percent = view.findViewById<TextView>(R.id.percent_view)
+        val period = view.findViewById<TextView>(R.id.period_view)
         val phoneNum = view.findViewById<EditText>(R.id.phone_view)
 
         conditionsViewModel.conditionsLiveData.observe(viewLifecycleOwner, {
             when(it) {
                 is ResultData.Success -> {
-                    Toast.makeText(context, "Conditions was accepted!! ${it.value?.maxAmount}", Toast.LENGTH_LONG).show()
+                    percent.text = it.value?.percent.toString()
+                    period.text = it.value?.period.toString()
+                    amount.text = it.value?.maxAmount.toString()
                 }
                 is ResultData.Error -> {
                     Toast.makeText(context, "Something was wrong", Toast.LENGTH_LONG).show()

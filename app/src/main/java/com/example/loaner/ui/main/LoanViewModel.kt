@@ -1,5 +1,6 @@
 package com.example.loaner.ui.main
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -19,6 +20,7 @@ class LoanViewModel @Inject constructor(val loanRepository: LoanRepository): Vie
     val createLoanLiveData = MutableLiveData<ResultData<LoanResponse>>()
 
     fun createLoan(loanRequest: LoanRequest) {
+        Log.d("TAG", "createLoan: $loanRequest")
         viewModelScope.launch {
             loanRepository.createLoan(loanRequest)
                 .catch {

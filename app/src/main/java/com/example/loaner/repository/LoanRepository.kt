@@ -23,11 +23,11 @@ class LoanRepository @Inject constructor(val loanService: LoanService) {
         return callbackFlow {
             loanService.createLoan(data).enqueue(object : Callback<LoanResponse> {
                 override fun onResponse(call: Call<LoanResponse>, response: Response<LoanResponse>) {
-                    Log.d("TAG", "onResponse: ${response.body()} ${response.code()}")
                     offer(response.body())
                 }
 
                 override fun onFailure(call: Call<LoanResponse>, t: Throwable) {
+                    Log.d("TAG", "Create fails $t")
                     close(t)
                 }
 
