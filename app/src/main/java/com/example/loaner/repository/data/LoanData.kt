@@ -1,7 +1,7 @@
 package com.example.loaner.repository.data
 
-data class LoanResponse(
-    val name: String,
+data class LoanData(
+    val firstName: String,
     val lastName: String,
     val amount: Int,
     val percent: Double,

@@ -8,6 +8,8 @@
     <string name="get_new_loan">Get new loan</string>
     <string name="amount">Amount</string>
     <string name="first_name">First name</string>
+    <string name="date">Date</string>
+    <string name="state">State</string>
     <string name="last_name">Last name</string>
     <string name="percent">Percent</string>
     <string name="period">Period</string>
