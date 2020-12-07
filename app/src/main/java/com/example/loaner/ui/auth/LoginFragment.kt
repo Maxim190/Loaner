@@ -1,6 +1,5 @@
 package com.example.loaner.ui.auth
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -13,6 +12,7 @@ import com.example.loaner.App
 import com.example.loaner.R
 import com.example.loaner.repository.data.ResultData
 import com.example.loaner.ui.main.ProfileFragment
+import com.example.loaner.vm.LoginViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 

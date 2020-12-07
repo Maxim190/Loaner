@@ -9,7 +9,7 @@ import com.example.loaner.App
 import com.example.loaner.R
 import com.example.loaner.repository.data.LoanData
 import com.example.loaner.repository.data.ResultData
-import com.example.loaner.ui.main.LoanViewModel
+import com.example.loaner.vm.LoanViewModel
 import javax.inject.Inject
 
 class LoanDetailedFragment: Fragment(R.layout.fragment_loan_detailed) {

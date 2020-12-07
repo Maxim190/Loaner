@@ -1,4 +1,4 @@
-package com.example.loaner.ui.auth
+package com.example.loaner.vm
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

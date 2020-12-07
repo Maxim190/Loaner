@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="UnusedAttribute">
+    <!-- How use and set fonts see wiki page "Fonts In Xml". -->
+
+    <!-- Regular: android:textStyle="normal" -->
+    <font
+        android:font="@font/open_sans"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        app:font="@font/open_sans"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- Italic: android:textStyle="italic" -->
+    <font
+        android:font="@font/open_sans_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+        app:font="@font/open_sans_italic"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- Bold: android:textStyle="bold"-->
+    <font
+        android:font="@font/open_sans_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+        app:font="@font/open_sans_bold"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- Bold Italic: android:textStyle="italic|bold"-->
+    <font
+        android:font="@font/open_sans_extrabold_italic"
+        android:fontStyle="italic"
+        android:fontWeight="700"
+        app:font="@font/open_sans_extrabold_italic"
+        app:fontStyle="italic"
+        app:fontWeight="700" />
+
+</font-family>

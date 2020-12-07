@@ -7,12 +7,12 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.example.loaner.App
 import com.example.loaner.R
 import com.example.loaner.repository.data.LoanRequest
 import com.example.loaner.repository.data.ResultData
-import com.example.loaner.ui.main.LoanViewModel
+import com.example.loaner.vm.ConditionsViewModel
+import com.example.loaner.vm.LoanViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 

@@ -15,14 +15,102 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <LinearLayout
+        android:id="@+id/holder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/card_height"
         android:layout_marginTop="@dimen/default_margin"
+        android:orientation="vertical"
+        android:background="@color/teal_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/test">
+        <TextView
+            android:id="@+id/label_approved_loans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            style="@style/AppTheme.Medium.Bold.Italic"
+            android:textAllCaps="true"
+            android:text="@string/approved_loans"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_approved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/label_approved_loans"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/label_no_approved_loans"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            android:text="@string/at_the_moment_you_have_no_loans_in_status"/>
+
+        <ProgressBar
+            android:id="@+id/approved_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@drawable/bg_progress"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/holder1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_height"
+        android:layout_marginTop="@dimen/default_margin"
+        android:orientation="vertical"
         android:background="@color/purple_200"
-        app:layout_constraintTop_toBottomOf="@id/test"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/holder">
+        <TextView
+            android:id="@+id/label_registered_loans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            style="@style/AppTheme.Medium.Bold.Italic"
+            android:textAllCaps="true"
+            android:text="@string/pending_decision"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_registered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/label_approved_loans"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/label_no_registered_loans"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            android:text="@string/at_the_moment_you_have_no_loans_in_status"/>
+
+        <ProgressBar
+            android:id="@+id/registered_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@drawable/bg_progress"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/history_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_loan_history"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/holder1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/create_loan"
@@ -31,7 +119,9 @@
         android:text="@string/get_new_loan"
         android:paddingStart="@dimen/default_padding"
         android:paddingEnd="@dimen/default_padding"
-        app:layout_constraintTop_toBottomOf="@id/recycler_view"
+        android:textAllCaps="true"
+        style="@style/AppTheme.Medium.Bold"
+        app:layout_constraintTop_toBottomOf="@id/holder1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
