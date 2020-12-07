@@ -13,6 +13,7 @@ import com.example.loaner.R
 import com.example.loaner.repository.data.LoanData
 import com.example.loaner.repository.data.LoanState
 import com.example.loaner.repository.data.ResultData
+import com.example.loaner.ui.history.HistoryFragment
 import com.example.loaner.ui.loan.LoanDetailedFragment
 import com.example.loaner.ui.loan.NewLoanFragment
 import com.example.loaner.ui.main.adapter.ProfileLoansAdapter
@@ -38,6 +39,10 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
 
         view.findViewById<Button>(R.id.create_loan).setOnClickListener {
             openFragment(NewLoanFragment())
+        }
+
+        view.findViewById<Button>(R.id.history_button).setOnClickListener {
+            openFragment(HistoryFragment())
         }
 
         loansRegisteredLabel = view.findViewById(R.id.label_no_registered_loans)
@@ -79,7 +84,7 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
     }
 
     private fun setLoansList() {
-        viewModel.getLoansLiveData.observe(viewLifecycleOwner, {
+        viewModel.getSortedLoansLiveData.observe(viewLifecycleOwner, {
             when (it) {
                 is ResultData.Success -> {
                     if (it.value != null) {
@@ -91,7 +96,7 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
                 }
             }
         })
-        viewModel.getLoans()
+        viewModel.getSortedLoans()
     }
 
     private fun setRegisteredLoans(data: List<LoanData>?) {

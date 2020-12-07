@@ -15,9 +15,14 @@
     <string name="period">Period</string>
     <string name="phone_number">Phone number</string>
     <string name="apply">Apply</string>
+    <string name="history">History</string>
     <string name="at_the_moment_you_have_no_loans_in_status">At the moment you have no loans in status \'\'</string>
     <string name="pending_decision">Pending decision</string>
     <string name="approved_loans">Approved loans</string>
     <string name="view_loan_history">View loan history</string>
     <string name="you_have_no_loan_applications_yet">You have no loan applications yet</string>
+    <string name="approved">Approved</string>
+    <string name="registered">Registered</string>
+    <string name="rejected">Rejected</string>
+    <string name="valuta">rub</string>
 </resources>
