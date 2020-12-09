@@ -3,12 +3,15 @@ package com.example.loaner.ui.loan
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.loaner.App
 import com.example.loaner.R
 import com.example.loaner.repository.data.LoanData
 import com.example.loaner.repository.data.ResultData
+import com.example.loaner.ui.main.ProfileFragment
 import com.example.loaner.vm.LoanViewModel
 import javax.inject.Inject
 
@@ -43,6 +46,15 @@ class LoanDetailedFragment: Fragment(R.layout.fragment_loan_detailed) {
         dateView = view.findViewById(R.id.detailed_date)
         stateView = view.findViewById(R.id.detailed_state)
 
+        view.findViewById<Button>(R.id.back_to_main).setOnClickListener {
+            activity?.let {
+                it.supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, ProfileFragment())
+                        .addToBackStack(null)
+                        .commit()
+            }
+        }
+
         val loanId = arguments?.getInt(LOAD_ID_BUNDLE)
         loanId?.let {
             loadLoan(it)
@@ -64,7 +76,6 @@ class LoanDetailedFragment: Fragment(R.layout.fragment_loan_detailed) {
     }
 
     private fun fillFields(loanData: LoanData) {
-        Log.d("TAG", "fillFields: NAME: ${loanData.firstName}")
         nameView.text = loanData.firstName
         lastNameView.text = loanData.lastName
         phoneView.text = loanData.phoneNumber

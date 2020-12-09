@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme.Text" parent="@android:style/TextAppearance"/>
-    <style name="AppTheme.Medium">
+    <style name="AppTheme.Text.Medium">
         <item name="android:textSize">20sp</item>
     </style>
-    <style name="AppTheme.Medium.Bold">
+    <style name="AppTheme.Text.Large">
+        <item name="android:textSize">30sp</item>
+    </style>
+    <style name="AppTheme.Text.Medium.Bold">
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="AppTheme.Medium.Bold.Italic">
+    <style name="AppTheme.Text.Medium.Bold.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="AppTheme.Text.Medium.Bold.Italic">
         <item name="android:textStyle">italic</item>
     </style>
 </resources>

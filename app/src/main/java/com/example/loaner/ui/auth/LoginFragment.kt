@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.loaner.App
 import com.example.loaner.R
 import com.example.loaner.repository.data.ResultData
+import com.example.loaner.ui.MainFragment
 import com.example.loaner.ui.main.ProfileFragment
 import com.example.loaner.vm.LoginViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -53,7 +54,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                 when (it) {
                     is ResultData.Success -> {
                         Toast.makeText(context, "Registered successfully", Toast.LENGTH_SHORT).show()
-                        activity?.supportFragmentManager?.popBackStack()
+                        openFragment(MainFragment())
                     }
                     is ResultData.Error -> {
                         Toast.makeText(context, "Registration failed", Toast.LENGTH_SHORT).show()
@@ -69,7 +70,6 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
         else {
             loginViewModel.loginResponse.observe(viewLifecycleOwner, {
                 if (it) {
-                    Log.d("TAG", "onViewCreatedHere: $it")
                     openFragment(ProfileFragment())
                 }
                 else {
@@ -88,7 +88,6 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
         activity?.let{
             it.supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
-                .addToBackStack(null)
                 .commit()
         }
     }

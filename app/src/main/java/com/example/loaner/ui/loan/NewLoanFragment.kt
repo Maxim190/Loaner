@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.loaner.App
 import com.example.loaner.R
@@ -28,6 +30,12 @@ class NewLoanFragment: Fragment(R.layout.fragment_new_loan) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         (activity?.applicationContext as App).appComponent.inject(this)
         super.onViewCreated(view, savedInstanceState)
+
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+        toolbar.setTitle(R.string.get_new_loan)
+        toolbar.setNavigationOnClickListener {
+            activity?.onBackPressed()
+        }
 
         val name = view.findViewById<EditText>(R.id.first_name_view)
         val lastName = view.findViewById<EditText>(R.id.last_name_view)
@@ -53,8 +61,11 @@ class NewLoanFragment: Fragment(R.layout.fragment_new_loan) {
         loanViewModel.createLoanLiveData.observe(viewLifecycleOwner, {
             when(it) {
                 is ResultData.Success -> {
-                    Toast.makeText(context, "Loan was accepted!!", Toast.LENGTH_LONG).show()
-                    activity?.onBackPressed()
+                    openFragment(ResultLoanFragment().apply {
+                        arguments = bundleOf(
+                                ResultLoanFragment.LOAN_STATE to it.value?.state,
+                                LoanDetailedFragment.LOAD_ID_BUNDLE to it.value?.id)
+                    })
                 }
                 is ResultData.Error -> {
                     Toast.makeText(context, "Something was wrong", Toast.LENGTH_LONG).show()
@@ -73,6 +84,15 @@ class NewLoanFragment: Fragment(R.layout.fragment_new_loan) {
                         phoneNum.text.toString()
                 )
             loanViewModel.createLoan(data)
+        }
+    }
+
+    private fun openFragment(fragment: Fragment) {
+        activity?.let {
+            it.supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack(null)
+                    .commit()
         }
     }
 }

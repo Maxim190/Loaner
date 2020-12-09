@@ -3,12 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/AppTheme.Text.Medium"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:text="@string/detailed_information"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -20,13 +31,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -38,13 +52,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -56,13 +73,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -74,13 +94,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -92,13 +115,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -110,13 +136,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -128,13 +157,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/small_padding"
+        android:elevation="@dimen/cardview_default_elevation"
         android:layout_margin="@dimen/default_margin">
         <TextView
             android:layout_width="0dp"
@@ -146,7 +178,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="asdasd"/>
+            android:text="@string/wait"/>
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_to_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/default_margin"
+        android:padding="@dimen/default_padding"
+        android:text="@string/to_main_screen"/>
 
 </LinearLayout>

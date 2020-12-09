@@ -24,7 +24,7 @@
                 tool:text="25000"
                 android:textAlignment="center"
                 android:textSize="25sp"
-                style="@style/AppTheme.Medium"
+                style="@style/AppTheme.Text.Medium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>

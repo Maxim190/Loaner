@@ -6,14 +6,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/test"
+        android:id="@+id/account_info_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your loans"
-        android:textSize="50sp"
+        android:text="@string/your_dashboard"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/total_debt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_debt_13237"
+        android:textSize="15sp"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_info_title"/>
+
+    <TextView
+        android:id="@+id/next_payout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_payment_1233"
+        android:textSize="15sp"
+        android:layout_marginStart="@dimen/default_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/total_debt"/>
 
     <LinearLayout
         android:id="@+id/holder"
@@ -23,13 +44,13 @@
         android:orientation="vertical"
         android:background="@color/teal_200"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/test">
+        app:layout_constraintTop_toBottomOf="@id/next_payout">
         <TextView
             android:id="@+id/label_approved_loans"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_margin"
-            style="@style/AppTheme.Medium.Bold.Italic"
+            style="@style/AppTheme.Text.Medium.Bold.Italic"
             android:textAllCaps="true"
             android:text="@string/approved_loans"/>
 
@@ -37,6 +58,7 @@
             android:id="@+id/recycler_view_approved"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             app:layout_constraintTop_toBottomOf="@id/label_approved_loans"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -71,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_margin"
-            style="@style/AppTheme.Medium.Bold.Italic"
+            style="@style/AppTheme.Text.Medium.Bold.Italic"
             android:textAllCaps="true"
             android:text="@string/pending_decision"/>
 
@@ -79,6 +101,7 @@
             android:id="@+id/recycler_view_registered"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             app:layout_constraintTop_toBottomOf="@id/label_approved_loans"
             app:layout_constraintStart_toStartOf="parent"/>
 
@@ -120,8 +143,8 @@
         android:paddingStart="@dimen/default_padding"
         android:paddingEnd="@dimen/default_padding"
         android:textAllCaps="true"
-        style="@style/AppTheme.Medium.Bold"
-        app:layout_constraintTop_toBottomOf="@id/holder1"
+        style="@style/AppTheme.Text.Medium.Bold.White"
+        app:layout_constraintTop_toBottomOf="@id/history_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

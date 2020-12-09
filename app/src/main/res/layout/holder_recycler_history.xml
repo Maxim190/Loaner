@@ -70,7 +70,7 @@
         android:layout_marginStart="@dimen/small_padding"
         android:layout_marginTop="@dimen/default_margin"
         android:layout_marginEnd="@dimen/large_margin"
-        style="@style/AppTheme.Medium"
+        style="@style/AppTheme.Text.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tool:text="25000"/>

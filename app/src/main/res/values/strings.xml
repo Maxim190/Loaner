@@ -16,7 +16,7 @@
     <string name="phone_number">Phone number</string>
     <string name="apply">Apply</string>
     <string name="history">History</string>
-    <string name="at_the_moment_you_have_no_loans_in_status">At the moment you have no loans in status \'\'</string>
+    <string name="at_the_moment_you_have_no_loans_in_status">At the moment you have no loans</string>
     <string name="pending_decision">Pending decision</string>
     <string name="approved_loans">Approved loans</string>
     <string name="view_loan_history">View loan history</string>
@@ -25,4 +25,17 @@
     <string name="registered">Registered</string>
     <string name="rejected">Rejected</string>
     <string name="valuta">rub</string>
+    <string name="loan_information">Loan information</string>
+    <string name="success_additional_info">You can get money at the nearest bank office. For getting more detailed information call 2398475</string>
+    <string name="success_header">Congratulations!\nYou have a new loan approved</string>
+    <string name="rejected_header">Sorry,\nthe request was rejected</string>
+    <string name="rejected_additional_info">Try again later. For getting more detailed information call 2398475</string>
+    <string name="registered_header">Your request was registered!</string>
+    <string name="registered_additional_info">Your request will be reviewed by specialists in the nearest future. For getting more detailed information call 2398475</string>
+    <string name="to_main_screen">to main screen</string>
+    <string name="detailed_information">Detailed information</string>
+    <string name="wait">...</string>
+    <string name="your_dashboard">Account info</string>
+    <string name="total_debt_13237">Total debt: 13237</string>
+    <string name="next_payment_1233">Next payment: 1233</string>
 </resources>

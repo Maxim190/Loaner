@@ -8,6 +8,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="?attr/homeAsUpIndicator" />
@@ -78,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/you_have_no_loan_applications_yet"
-        style="@style/AppTheme.Medium"
+        style="@style/AppTheme.Text.Medium"
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
