@@ -74,16 +74,21 @@ class NewLoanFragment: Fragment(R.layout.fragment_new_loan) {
         })
 
         view.findViewById<Button>(R.id.apply_button).setOnClickListener {
-            val data =
-                LoanRequest(
+            if (name.text.isEmpty() || lastName.text.isEmpty() || phoneNum.text.isEmpty()) {
+                Toast.makeText(context, "Please fill in all the fields", Toast.LENGTH_LONG).show()
+            }
+            else {
+                val data =
+                    LoanRequest(
                         amount.text.toString().toInt(),
                         name.text.toString(),
                         lastName.text.toString(),
                         percent.text.toString().toDouble(),
                         period.text.toString().toInt(),
                         phoneNum.text.toString()
-                )
-            loanViewModel.createLoan(data)
+                    )
+                loanViewModel.createLoan(data)
+            }
         }
     }
 

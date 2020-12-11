@@ -90,6 +90,7 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
                     if (it.value != null) {
                         setApprovedLoans(it.value[LoanState.APPROVED])
                         setRegisteredLoans(it.value[LoanState.REGISTERED])
+                        loansApprovedLabel.text = "Sddaddaaaaaa"
                     }
                 }
                 is ResultData.Error -> {

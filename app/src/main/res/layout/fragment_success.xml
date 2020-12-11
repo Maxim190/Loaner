@@ -45,7 +45,6 @@
         android:text="@string/loan_information"
         android:layout_marginBottom="@dimen/large_margin"
         android:textAllCaps="true"
-        style="@style/AppTheme.Text.Medium.Bold.White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

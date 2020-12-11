@@ -43,25 +43,25 @@
         tool:text="89564756473"/>
 
     <TextView
-        android:id="@+id/label_state"
+        android:id="@+id/label_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/default_margin"
-        android:text="@string/state"
+        android:text="@string/date"
         app:layout_constraintStart_toEndOf="@id/color_block"
         app:layout_constraintTop_toBottomOf="@id/history_name"/>
 
     <TextView
-        android:id="@+id/history_state"
+        android:id="@+id/history_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/default_margin"
         android:textAllCaps="false"
-        app:layout_constraintStart_toEndOf="@id/label_state"
+        app:layout_constraintStart_toEndOf="@id/label_date"
         app:layout_constraintTop_toBottomOf="@id/history_name"
-        tool:text="REJECTED"/>
+        tool:text="11-20-2020"/>
 
     <TextView
         android:id="@+id/history_amount"
@@ -92,7 +92,7 @@
         android:layout_marginStart="@dimen/default_margin"
         android:layout_marginTop="@dimen/default_margin"
         android:text="@string/percent"
-        app:layout_constraintStart_toEndOf="@id/history_state"
+        app:layout_constraintStart_toEndOf="@id/history_date"
         app:layout_constraintTop_toBottomOf="@id/history_name"/>
 
     <TextView

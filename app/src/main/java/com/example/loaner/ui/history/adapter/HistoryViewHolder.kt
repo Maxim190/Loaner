@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.loaner.R
+import com.example.loaner.parseDate
 import com.example.loaner.repository.data.LoanData
 import com.example.loaner.repository.data.LoanState
 
@@ -17,7 +18,7 @@ class HistoryViewHolder(view: View): RecyclerView.ViewHolder(view) {
     private val amountView = view.findViewById<TextView>(R.id.history_amount)
     private val percentView = view.findViewById<TextView>(R.id.history_percent)
     private val periodView = view.findViewById<TextView>(R.id.history_period)
-    private val stateView = view.findViewById<TextView>(R.id.history_state)
+    private val dateView = view.findViewById<TextView>(R.id.history_date)
     private val colorView = view.findViewById<View>(R.id.color_block)
 
     private val colorApproved: Int = ResourcesCompat.getColor(view.resources, R.color.green, null)
@@ -31,7 +32,7 @@ class HistoryViewHolder(view: View): RecyclerView.ViewHolder(view) {
         amountView.text = data.amount.toString()
         percentView.text = data.percent.toString()
         periodView.text = data.period.toString()
-        stateView.text = data.state
+        dateView.text = parseDate(data.date)
 
         val color = when(data.state) {
             LoanState.APPROVED.status -> colorApproved

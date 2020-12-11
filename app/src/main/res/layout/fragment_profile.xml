@@ -143,7 +143,6 @@
         android:paddingStart="@dimen/default_padding"
         android:paddingEnd="@dimen/default_padding"
         android:textAllCaps="true"
-        style="@style/AppTheme.Text.Medium.Bold.White"
         app:layout_constraintTop_toBottomOf="@id/history_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,6 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.loaner.App
 import com.example.loaner.R
+import com.example.loaner.parseDate
 import com.example.loaner.repository.data.LoanData
 import com.example.loaner.repository.data.ResultData
 import com.example.loaner.ui.main.ProfileFragment
@@ -82,7 +83,7 @@ class LoanDetailedFragment: Fragment(R.layout.fragment_loan_detailed) {
         amountView.text = loanData.amount.toString()
         percentView.text = loanData.percent.toString()
         periodView.text = loanData.period.toString()
-        dateView.text = loanData.date
+        dateView.text = parseDate(loanData.date)
         stateView.text = loanData.state
     }
 }

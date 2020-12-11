@@ -36,6 +36,7 @@
     <string name="detailed_information">Detailed information</string>
     <string name="wait">...</string>
     <string name="your_dashboard">Account info</string>
-    <string name="total_debt_13237">Total debt: 13237</string>
-    <string name="next_payment_1233">Next payment: 1233</string>
+    <string name="total_debt_13237">Total debt: ...</string>
+    <string name="next_payment_1233">Next payment: ...</string>
+    <string name="getting_loans_has_never_been_easier">Getting loans has never been easier</string>
 </resources>
