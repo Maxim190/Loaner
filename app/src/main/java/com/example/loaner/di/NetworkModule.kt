@@ -1,18 +1,16 @@
 package com.example.loaner.di
 
+import com.example.loaner.App.Companion.BASE_URL
 import com.example.loaner.api.AuthService
 import com.example.loaner.api.LoanService
 import com.example.loaner.network.AuthorizationInterceptor
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
-import javax.inject.Singleton
 
 
 @Module
@@ -26,7 +24,7 @@ class NetworkModule {
                 .addInterceptor(loggingInterceptor)
                 .build()
         return Retrofit.Builder()
-            .baseUrl("http://focusapp-env.eba-xm2atk2z.eu-central-1.elasticbeanstalk.com/")
+            .baseUrl(BASE_URL)
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
